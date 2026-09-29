@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Leo Dental — Odontología digital en Playa del Carmen. Laboratorio CAD/CAM, diseño de sonrisas e implantes." />
-  <title>Leo Dental | Sonrisas de precisión</title>
+  <meta name="description" content="Dental — Odontología digital en Playa del Carmen. Laboratorio CAD/CAM, diseño de sonrisas e implantes." />
+  <title> Dental | Sonrisas de precisión</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +216,7 @@
       overflow: hidden;
       background:
         linear-gradient(90deg, rgba(10,10,9,.76) 0%, rgba(10,10,9,.42) 45%, rgba(10,10,9,.08) 100%),
-        url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1800&q=85") center/cover;
+        url("fotos/IMG15.jpeg") center/cover;
     }
 
     .hero::after {
@@ -680,7 +680,192 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+/* REVIEWS */
+.reviews {
+  padding: 120px 0;
+  background: #fff;
+}
 
+.reviews-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.reviews-heading p {
+  color: var(--muted);
+  margin-top: 18px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 65px;
+}
+
+.review-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(40, 32, 18, .06);
+}
+
+.review-stars {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: .9rem;
+  margin-bottom: 20px;
+}
+
+.review-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: var(--black);
+  margin-bottom: 25px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cream);
+  color: var(--gold-dark);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.review-author strong {
+  display: block;
+  color: var(--black);
+  font-size: .82rem;
+}
+
+.review-author span {
+  color: var(--muted);
+  font-size: .72rem;
+}
+
+.review-form-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 45px;
+  background: var(--cream);
+  border-radius: 25px;
+}
+
+.review-form-heading {
+  margin-bottom: 30px;
+}
+
+.review-form-heading h3 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.review-form-heading p {
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.review-form {
+  display: grid;
+  gap: 18px;
+}
+
+.review-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.review-field {
+  display: grid;
+  gap: 7px;
+}
+
+.review-field label {
+  color: var(--black);
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.review-field input,
+.review-field textarea,
+.review-field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px 15px;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.review-field input:focus,
+.review-field textarea:focus,
+.review-field select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(185,151,91,.10);
+}
+
+.review-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.review-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.review-rating input {
+  display: none;
+}
+
+.review-rating label {
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: #d7d0c2;
+  transition: color .2s;
+}
+
+.review-rating label:hover,
+.review-rating label:hover ~ label,
+.review-rating input:checked ~ label {
+  color: var(--gold);
+}
+
+.review-submit {
+  justify-self: start;
+  border: 0;
+  cursor: pointer;
+}
+
+.review-success {
+  display: none;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(117,198,138,.12);
+  color: #397348;
+  font-size: .85rem;
+}
     /* FAQ */
     .faq {
       padding: 110px 0;
@@ -873,6 +1058,9 @@
 
     /* MOBILE */
     @media (max-width: 900px) {
+      .reviews-grid {
+  grid-template-columns: 1fr 1fr;
+}
       .nav-links {
         position: absolute;
         display: none;
@@ -948,6 +1136,17 @@
     }
 
     @media (max-width: 600px) {
+      .reviews-grid {
+  grid-template-columns: 1fr;
+}
+
+.review-form-wrapper {
+  padding: 30px 22px;
+}
+
+.review-form-row {
+  grid-template-columns: 1fr;
+}
       .container,
       .hero-content {
         width: min(100% - 28px, 1180px);
@@ -1074,7 +1273,7 @@
     <div class="container">
       <nav>
         <a href="#" class="logo">
-          <span class="logo-main">LEO</span>
+          <span class="logo-main"></span>
           <span class="logo-sub">Dental Studio</span>
         </a>
 
@@ -1086,6 +1285,7 @@
           <a href="#galeria">Galería</a>
           <a href="#ubicacion">Ubicación</a>
           <a href="#cita" class="nav-cta">Solicitar cita</a>
+          <a href="#resenas">Reseñas</a>
         </div>
       </nav>
     </div>
@@ -1096,10 +1296,10 @@
     <section class="hero">
       <div class="hero-content">
         <span class="eyebrow" style="color:#e2c88f;">Odontología digital · Playa del Carmen</span>
-        <h1>Tu sonrisa,<br><span>hecha con precisión.</span></h1>
+        <h1>Doctor Ramon Clave<br><span>Odontología confiable.</span></h1>
         <p class="hero-copy">
-          Combinamos odontología estética, tecnología digital y atención personalizada
-          para crear resultados naturales que se sienten tan bien como se ven.
+          Combinamos atención interna, tecnología digital y atención personalizada
+          para crear resultados naturales que todos amaran.
         </p>
 
         <div class="hero-buttons">
@@ -1116,7 +1316,7 @@
     <section class="intro">
       <div class="container intro-grid">
         <div>
-          <span class="eyebrow">Leo Dental Studio</span>
+          <span class="eyebrow"> Dental Studio</span>
           <div class="intro-number">01</div>
         </div>
 
@@ -1333,7 +1533,144 @@
     </section>
 
     
+<section class="reviews" id="resenas">
+  <div class="container">
 
+    <div class="reviews-heading">
+      <span class="eyebrow">Experiencias</span>
+      <h2>Lo que dicen nuestros pacientes.</h2>
+      <p>
+        Cada experiencia es diferente. Conoce lo que nuestros pacientes
+        comparten sobre su atención y tratamiento.
+      </p>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid">
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+
+        <p class="review-text">
+          “Una atención excelente y muy profesional. Me explicaron
+          todo el proceso desde el principio y me sentí muy cómodo.”
+        </p>
+
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <strong>María G.</strong>
+            <span>Paciente verificada</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+
+        <p class="review-text">
+          “Me gustó mucho el trato y la forma en que utilizaron
+          tecnología para explicarme mi tratamiento.”
+        </p>
+
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div>
+            <strong>Jorge R.</strong>
+            <span>Paciente verificado</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+
+        <p class="review-text">
+          “El resultado fue muy natural y durante todo el proceso
+          estuvieron pendientes de resolver mis dudas.”
+        </p>
+
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <strong>Ana L.</strong>
+            <span>Paciente verificada</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="review-form-wrapper">
+
+      <div class="review-form-heading">
+        <span class="eyebrow">Tu experiencia</span>
+        <h3>Comparte tu experiencia.</h3>
+        <p>
+          ¿Ya nos visitaste? Cuéntanos cómo fue tu experiencia.
+        </p>
+      </div>
+
+      <form class="review-form" id="reviewForm">
+
+        <div class="review-form-row">
+
+          <div class="review-field">
+            <label for="reviewName">Nombre</label>
+            <input
+              type="text"
+              id="reviewName"
+              placeholder="Tu nombre"
+              required
+            >
+          </div>
+
+          <div class="review-field">
+            <label for="reviewRating">Calificación</label>
+
+            <div class="review-rating">
+              <input type="radio" id="star5" name="rating" value="5" required>
+              <label for="star5">★</label>
+
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4">★</label>
+
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3">★</label>
+
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2">★</label>
+
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1">★</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="review-field">
+          <label for="reviewMessage">Tu reseña</label>
+
+          <textarea
+            id="reviewMessage"
+            placeholder="Cuéntanos sobre tu experiencia..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold review-submit">
+          Publicar reseña
+        </button>
+
+      </form>
+
+      <div class="review-success" id="reviewSuccess">
+        Gracias por compartir tu experiencia.
+      </div>
+
+    </div>
+
+  </div>
+</section>
     <section class="testimonial">
       <div class="container">
         <div class="quote-mark">“</div>
@@ -1341,7 +1678,7 @@
           La tecnología nos ayuda a planear mejor. La atención nos ayuda a
           hacerlo personal.
         </p>
-        <div class="quote-author">Leo Dental Studio · Playa del Carmen</div>
+        <div class="quote-author"> Dental Studio · Playa del Carmen</div>
       </div>
     </section>
 
@@ -1451,11 +1788,64 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Dental Studio</div>
+      <div>© <span id="year"></span>  Dental Studio</div>
       <div>Carretera Federal 3 · Playa del Carmen, Q. Roo.</div>
     </div>
   </footer>
+// Reseñas
+const reviewForm = document.getElementById("reviewForm");
+const reviewsGrid = document.getElementById("reviewsGrid");
+const reviewSuccess = document.getElementById("reviewSuccess");
 
+reviewForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("reviewName").value.trim();
+  const message = document.getElementById("reviewMessage").value.trim();
+  const rating = document.querySelector(
+    'input[name="rating"]:checked'
+  ).value;
+
+  if (!name || !message || !rating) {
+    return;
+  }
+
+  const firstLetter = name.charAt(0).toUpperCase();
+
+  const stars = "★".repeat(Number(rating)) +
+                "☆".repeat(5 - Number(rating));
+
+  const review = document.createElement("article");
+
+  review.className = "review-card";
+
+  review.innerHTML = `
+    <div class="review-stars">${stars}</div>
+
+    <p class="review-text">
+      “${message}”
+    </p>
+
+    <div class="review-author">
+      <div class="review-avatar">${firstLetter}</div>
+
+      <div>
+        <strong>${name}</strong>
+        <span>Paciente</span>
+      </div>
+    </div>
+  `;
+
+  reviewsGrid.prepend(review);
+
+  reviewForm.reset();
+
+  reviewSuccess.style.display = "block";
+
+  setTimeout(() => {
+    reviewSuccess.style.display = "none";
+  }, 4000);
+});
   <script>
     // Menú móvil
     const menuBtn = document.getElementById("menuBtn");

@@ -1530,147 +1530,33 @@
         
       </div>
       
-    </section>
 
     
 <section class="reviews" id="resenas">
   <div class="container">
 
     <div class="reviews-heading">
-      <span class="eyebrow">Experiencias</span>
-      <h2>Lo que dicen nuestros pacientes.</h2>
+      <div>
+        <span class="eyebrow">Reseñas</span>
+
+        <h2>
+          Lo que dicen nuestros pacientes.
+        </h2>
+      </div>
+
       <p>
-        Cada experiencia es diferente. Conoce lo que nuestros pacientes
-        comparten sobre su atención y tratamiento.
+        La experiencia de nuestros pacientes es parte fundamental
+        de nuestro trabajo.
       </p>
     </div>
 
     <div class="reviews-grid" id="reviewsGrid">
-
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-
-        <p class="review-text">
-          “Una atención excelente y muy profesional. Me explicaron
-          todo el proceso desde el principio y me sentí muy cómodo.”
-        </p>
-
-        <div class="review-author">
-          <div class="review-avatar">M</div>
-          <div>
-            <strong>María G.</strong>
-            <span>Paciente verificada</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-
-        <p class="review-text">
-          “Me gustó mucho el trato y la forma en que utilizaron
-          tecnología para explicarme mi tratamiento.”
-        </p>
-
-        <div class="review-author">
-          <div class="review-avatar">J</div>
-          <div>
-            <strong>Jorge R.</strong>
-            <span>Paciente verificado</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="review-card">
-        <div class="review-stars">★★★★★</div>
-
-        <p class="review-text">
-          “El resultado fue muy natural y durante todo el proceso
-          estuvieron pendientes de resolver mis dudas.”
-        </p>
-
-        <div class="review-author">
-          <div class="review-avatar">A</div>
-          <div>
-            <strong>Ana L.</strong>
-            <span>Paciente verificada</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="review-form-wrapper">
-
-      <div class="review-form-heading">
-        <span class="eyebrow">Tu experiencia</span>
-        <h3>Comparte tu experiencia.</h3>
-        <p>
-          ¿Ya nos visitaste? Cuéntanos cómo fue tu experiencia.
-        </p>
-      </div>
-
-      <form class="review-form" id="reviewForm">
-
-        <div class="review-form-row">
-
-          <div class="review-field">
-            <label for="reviewName">Nombre</label>
-            <input
-              type="text"
-              id="reviewName"
-              placeholder="Tu nombre"
-              required
-            >
-          </div>
-
-          <div class="review-field">
-            <label for="reviewRating">Calificación</label>
-
-            <div class="review-rating">
-              <input type="radio" id="star5" name="rating" value="5" required>
-              <label for="star5">★</label>
-
-              <input type="radio" id="star4" name="rating" value="4">
-              <label for="star4">★</label>
-
-              <input type="radio" id="star3" name="rating" value="3">
-              <label for="star3">★</label>
-
-              <input type="radio" id="star2" name="rating" value="2">
-              <label for="star2">★</label>
-
-              <input type="radio" id="star1" name="rating" value="1">
-              <label for="star1">★</label>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="review-field">
-          <label for="reviewMessage">Tu reseña</label>
-
-          <textarea
-            id="reviewMessage"
-            placeholder="Cuéntanos sobre tu experiencia..."
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-gold review-submit">
-          Publicar reseña
-        </button>
-
-      </form>
-
-      <div class="review-success" id="reviewSuccess">
-        Gracias por compartir tu experiencia.
-      </div>
-
+      <!-- Las reseñas se cargan automáticamente desde reviews.json -->
     </div>
 
   </div>
 </section>
+
     <section class="testimonial">
       <div class="container">
         <div class="quote-mark">“</div>
@@ -1768,7 +1654,7 @@
       </div>
     </section>
 
-   <section class="container" id="cita">
+<section class="container" id="cita">
   <div class="final-cta">
     <div class="final-cta-content">
       <span class="eyebrow" style="color:#d8bd83;justify-content:center;">
@@ -1794,7 +1680,6 @@
   </div>
 </section>
 
-
   </main>
 
   <footer>
@@ -1803,60 +1688,6 @@
       <div>Carretera Federal 3 · Playa del Carmen, Q. Roo.</div>
     </div>
   </footer>
-// Reseñas
-const reviewForm = document.getElementById("reviewForm");
-const reviewsGrid = document.getElementById("reviewsGrid");
-const reviewSuccess = document.getElementById("reviewSuccess");
-
-reviewForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("reviewName").value.trim();
-  const message = document.getElementById("reviewMessage").value.trim();
-  const rating = document.querySelector(
-    'input[name="rating"]:checked'
-  ).value;
-
-  if (!name || !message || !rating) {
-    return;
-  }
-
-  const firstLetter = name.charAt(0).toUpperCase();
-
-  const stars = "★".repeat(Number(rating)) +
-                "☆".repeat(5 - Number(rating));
-
-  const review = document.createElement("article");
-
-  review.className = "review-card";
-
-  review.innerHTML = `
-    <div class="review-stars">${stars}</div>
-
-    <p class="review-text">
-      “${message}”
-    </p>
-
-    <div class="review-author">
-      <div class="review-avatar">${firstLetter}</div>
-
-      <div>
-        <strong>${name}</strong>
-        <span>Paciente</span>
-      </div>
-    </div>
-  `;
-
-  reviewsGrid.prepend(review);
-
-  reviewForm.reset();
-
-  reviewSuccess.style.display = "block";
-
-  setTimeout(() => {
-    reviewSuccess.style.display = "none";
-  }, 4000);
-});
   <script>
     // Menú móvil
     const menuBtn = document.getElementById("menuBtn");
@@ -1897,6 +1728,79 @@ reviewForm.addEventListener("submit", function(event) {
 
     updateBusinessStatus();
   </script>
+<script>
+  async function loadReviews() {
+    const reviewsGrid = document.getElementById("reviewsGrid");
 
+    try {
+      const response = await fetch("reviews.json");
+
+      if (!response.ok) {
+        throw new Error("No se pudo cargar reviews.json");
+      }
+
+      const reviews = await response.json();
+
+      // Mezclar las reseñas aleatoriamente
+      const shuffledReviews = [...reviews].sort(() => Math.random() - 0.5);
+
+      // Tomar solamente 3
+      const selectedReviews = shuffledReviews.slice(0, 3);
+
+      reviewsGrid.innerHTML = "";
+
+      selectedReviews.forEach(review => {
+
+        const stars =
+          "★".repeat(review.rating) +
+          "☆".repeat(5 - review.rating);
+
+        const firstLetter = review.name
+          .charAt(0)
+          .toUpperCase();
+
+        const article = document.createElement("article");
+        article.className = "review-card";
+
+        article.innerHTML = `
+          <div class="review-stars">
+            ${stars}
+          </div>
+
+          <p class="review-text">
+            “${review.message}”
+          </p>
+
+          <div class="review-author">
+
+            <div class="review-avatar">
+              ${firstLetter}
+            </div>
+
+            <div>
+              <strong>${review.name}</strong>
+              <span>Paciente</span>
+            </div>
+
+          </div>
+        `;
+
+        reviewsGrid.appendChild(article);
+      });
+
+    } catch (error) {
+
+      console.error("Error cargando reseñas:", error);
+
+      reviewsGrid.innerHTML = `
+        <p>
+          No se pudieron cargar las reseñas.
+        </p>
+      `;
+    }
+  }
+
+  loadReviews();
+</script>
 </body>
 </html>
